@@ -1,0 +1,60 @@
+
+.main {
+  min-height: 70vh;
+  background-color: #f8f9fa;
+}
+
+.hero {
+  text-align: center;
+  padding: 100px 20px;
+  background-color: #fff3e6;
+}
+
+.hero h1 {
+  margin-bottom: 20px;
+  font-size: 42px;
+  color: #e85d04;
+}
+
+.hero p {
+  max-width: 650px;
+  margin: 0 auto 30px;
+  font-size: 18px;
+  line-height: 1.7;
+  color: #555;
+}
+
+.button {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #e85d04;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.button:hover {
+  background-color: #c94d03;
+}
+
+.about {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 70px 20px;
+  text-align: center;
+}
+
+.about h2 {
+  margin-bottom: 15px;
+  font-size: 28px;
+  color: #333;
+}
+
+.about p {
+  margin: 0;
+  line-height: 1.7;
+  color: #666;
+  font-size: 16px;
+}

@@ -1,21 +1,34 @@
+import styles from "./app.module.css";
 import Link from "next/link";
-import styles from "./home.module.css";
-
 export default function HomePage() {
   return (
-    <div className={styles.container}>
-      <h1 className={styles.title}>Addis Eats</h1>
-      <nav className={styles.nav}>
-        <Link href="/" className={styles.navLink}>
-          Home
-        </Link>
-        <Link href="/menu" className={styles.navLink}>
-          Menu
-        </Link>
-        <Link href="/cart" className={styles.navLink}>
-          Cart
-        </Link>
-      </nav>
+    <div >
+  
+<main className={styles.main}>
+  <section className={styles.hero}>
+    <h1>Welcome to Addis Eats</h1>
+
+    <p>
+      Discover delicious meals from your favorite restaurants in Addis Ababa.
+      Order your favorite food and enjoy it from the comfort of your home.
+    </p>
+
+    <Link href="/menu" className={styles.button}>
+      Explore Menu
+    </Link>
+  </section>
+
+  <section className={styles.about}>
+    <h2>Good Food, Easy Ordering</h2>
+
+    <p>
+      Addis Eats makes it simple to find your favorite meals, add them to your
+      cart, and place your order quickly and easily.
+    </p>
+  </section>
+</main>
+```
+      
     </div>
   );
 }
