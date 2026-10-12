@@ -25,8 +25,8 @@ export default async function DishDetail({
 
       <div className={styles.badgeContainer}>
         <span className={styles.category}>{dish.category}</span>
-        <span className={dish.isSpicy ? styles.spicy : styles.mild}>
-          {dish.isSpicy ? "🌶️ Spicy" : "Mild"}
+        <span className={dish.spicy ? styles.spicy : styles.mild}>
+          {dish.spicy ? "🌶️ Spicy" : "Mild"}
         </span>
       </div>
 

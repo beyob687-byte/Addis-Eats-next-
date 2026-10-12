@@ -402,3 +402,11 @@ export  const menuData = [
   }
 
 ];
+
+export async function getDishes() {
+  return menuData;
+}
+
+export async function getDish(id) {
+  return menuData.find((d) => d.id === Number(id)) ?? null;
+}
