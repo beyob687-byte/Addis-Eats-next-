@@ -1,37 +1,35 @@
 
 'use client'
 
+import useSwr from 'swr'
+import {fetcher} from '@/data/fetcher'
 import { menuData } from '@/data/data'
 import { useRouter } from 'next/navigation'
 import styles from './menu.module.css'
 import {useState} from 'react'
 
-const CATEGORIES = [
-  'All',
-  'MAIN',
-  'DESSERT',
-  'DRINK',
-  'SIDE',
-  
-  'SNACK',
-  'BREAKFAST'
-  
-]
+
 export default function Menu({currncy="ETB"}: {currncy?: string}) {
 
   const [params, setParams] = useState("All");
 
-  const dish = params === "All" ? menuData : menuData.filter((item) => item.category === params);
+ 
  const router = useRouter()
 
-  if (!dish || dish.length === 0) {
-    return (<div><h1 className={styles.notFound}>Data not found</h1>
-    <button className={styles.button} onClick={() => router.back()}>Back</button></div>)
-  }
-
+ const {data,error,isLoading} = useSwr('/api/dishes',fetcher);
+ const dish = params === "All" ? data : data.filter((item) => item.category === params);
+ if (isLoading){
+  return <p>Loading Dishes....</p>
+ }
+ if (error){
+  return <div><p>failed to laod dishs</p>
+  <button className={styles.button} onClick={() => router.back()}>Back</button></div>
+ }
  
+ 
+ 
+ return( 
 
-  return (
   
     <div className={styles.container}>
       <h1 className={styles.title}>{params}</h1>
