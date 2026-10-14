@@ -5,7 +5,7 @@ export default async function DishDetail({
   params,
 }: {
   params: Promise<{ id: string }>
-}) {
+},cur="ETB") {
   const { id } = await params
   const dish = menuData.find((item) => item.id === Number(id))
 
@@ -21,7 +21,7 @@ export default async function DishDetail({
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>{dish.name}</h1>
-      <h2 className={styles.price}>${dish.price}</h2>
+      <h2 className={styles.price}>{dish.price}:{cur}</h2>
 
       <div className={styles.badgeContainer}>
         <span className={styles.category}>{dish.category}</span>
